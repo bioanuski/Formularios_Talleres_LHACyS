@@ -115,7 +115,7 @@ tr:last-child td {
 .col-cant-base { width: 25%; }
 .col-solicitada { width: 20%; text-align: center; }
 
-/* Control del cuadro de cantidad editable */
+/* Control de los cuadros editables */
 .input-cantidad {
   width: 70px;
   padding: 8px;
@@ -125,10 +125,36 @@ tr:last-child td {
   font-size: 1em;
 }
 
-/* Resaltado cuando el usuario pide material (> 0) */
-tr:has(.input-cantidad:not([value="0"]):focus),
-tr:has(.input-cantidad:not([value="0"])) {
-  /* Script dinámico opcional posterior, por ahora diseño base */
+.input-extra-nombre {
+  width: 90%;
+  padding: 8px;
+  border: 1px solid #dcdfe6;
+  border-radius: 4px;
+  font-size: 0.95em;
+  background-color: #fffdf4; /* Un tono ligeramente diferente para denotar que es editable */
+}
+
+/* Cuadro de observaciones/comentarios */
+.comentarios-box {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #dcdfe6;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin-bottom: 40px;
+}
+
+.comentarios-box textarea {
+  width: 100%;
+  height: 120px;
+  padding: 12px;
+  border: 1px solid #dcdfe6;
+  border-radius: 6px;
+  font-family: Arial, sans-serif;
+  font-size: 1em;
+  resize: vertical;
+  box-sizing: border-box;
+  margin-top: 10px;
 }
 
 tr:hover {
@@ -188,8 +214,8 @@ tr:hover {
 
 <body>
 
-<!-- Ponemos la etiqueta <form> envolviendo todo el contenido -->
-<form action="https://formsubmit.co/ana.delasheras@uam.es" method="POST" />
+<!-- Recuerda cambiar TU_CODIGO_AQUI por tu ID de Formspree (o la URL de FormSubmit) -->
+<form action="https://formspree.io/f/TU_CODIGO_AQUI" method="POST">
 
   <div class="header-banner">
     <h1>LHACyS - Solicitud de Material: Sondaje vesical</h1>
@@ -211,9 +237,9 @@ tr:hover {
       </div>
     </div>
 
-    <!-- Oculto para que en el correo sepas de qué taller es la solicitud -->
     <input type="hidden" name="_subject" value="Nueva Solicitud de Material: Sondaje Vesical">
 
+    <!-- SECCIÓN 1: MATERIAL POR ESTUDIANTE -->
     <div class="section">
       <h2>Material por estudiante</h2>
       <table>
@@ -225,14 +251,20 @@ tr:hover {
           </tr>
         </thead>
         <tbody>
-          <tr><td>Guantes no estériles</td><td>2 por estudiante</td><td class="col-solicitada"><input type="number" name="Cant_Guantes_No_Esteriles" class="input-cantidad" min="0" value="0"></td></tr>
-          <tr><td>Paño estéril fenestrado</td><td>1 por estudiante</td><td class="col-solicitada"><input type="number" name="Cant_Pano_Esteril_Fenestrado" class="input-cantidad" min="0" value="0"></td></tr>
-          <tr><td>Paño estéril no fenestrado</td><td>1 por estudiante</td><td class="col-solicitada"><input type="number" name="Cant_Pano_Esteril_No_Fenestrado" class="input-cantidad" min="0" value="0"></td></tr>
-          <tr><td>Gasas</td><td>2 por estudiante</td><td class="col-solicitada"><input type="number" name="Cant_Gasas" class="input-cantidad" min="0" value="0"></td></tr>
+          <tr><td>Guantes no estériles</td><td>2 por estudiante</td><td class="col-solicitada"><input type="number" name="Cant_Guantes_No_Esteriles" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Paño estéril fenestrado</td><td>1 por estudiante</td><td class="col-solicitada"><input type="number" name="Cant_Pano_Esteril_Fenestrado" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Paño estéril no fenestrado</td><td>1 por estudiante</td><td class="col-solicitada"><input type="number" name="Cant_Pano_Esteril_No_Fenestrado" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Gasas</td><td>2 por estudiante</td><td class="col-solicitada"><input type="number" name="Cant_Gasas" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          
+          <!-- FILAS EXTRAS PARA MATERIALES NO LISTADOS -->
+          <tr><td><input type="text" name="Extra_Estudiante_Nombre_1" class="input-extra-nombre" placeholder="Añadir otro material por estudiante..."></td><td>Manual</td><td class="col-solicitada"><input type="number" name="Extra_Estudiante_Cant_1" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td><input type="text" name="Extra_Estudiante_Nombre_2" class="input-extra-nombre" placeholder="Añadir otro material por estudiante..."></td><td>Manual</td><td class="col-solicitada"><input type="number" name="Extra_Estudiante_Cant_2" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td><input type="text" name="Extra_Estudiante_Nombre_3" class="input-extra-nombre" placeholder="Añadir otro material por estudiante..."></td><td>Manual</td><td class="col-solicitada"><input type="number" name="Extra_Estudiante_Cant_3" class="input-cantidad" min="0" placeholder="0"></td></tr>
         </tbody>
       </table>
     </div>
 
+    <!-- SECCIÓN 2: MATERIAL COMPARTIDO -->
     <div class="section">
       <h2>Material compartido</h2>
       <table>
@@ -244,23 +276,37 @@ tr:hover {
           </tr>
         </thead>
         <tbody>
-          <tr><td>Maniquí sondaje MASCULINO</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Maniqui_Masculino" class="input-cantidad" min="0" value="0"></td></tr>
-          <tr><td>Maniquí sondaje FEMENINO</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Maniqui_Femenino" class="input-cantidad" min="0" value="0"></td></tr>
-          <tr><td>Palo gotero</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Palo_Gotero" class="input-cantidad" min="0" value="0"></td></tr>
-          <tr><td>Lubricante</td><td>1 bote por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Lubricante_Bote" class="input-cantidad" min="0" value="0"></td></tr>
-          <tr><td>Jeringa 10 ml</td><td>1 cada 2 estudiantes</td><td class="col-solicitada"><input type="number" name="Cant_Jeringa_10ml" class="input-cantidad" min="0" value="0"></td></tr>
-          <tr><td>Sonda rectal</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Sonda_Rectal" class="input-cantidad" min="0" value="0"></td></tr>
-          <tr><td>Sonda vesical de 3 vías</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Sonda_Vesical_3vias" class="input-cantidad" min="0" value="0"></td></tr>
-          <tr><td>Sonda vesical pico-pato</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Sonda_Pico_Pato" class="input-cantidad" min="0" value="0"></td></tr>
-          <tr><td>Sonda Foley 14Fr</td><td>4 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Sonda_Foley_14Fr" class="input-cantidad" min="0" value="0"></td></tr>
-          <tr><td>Colector urinario</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Colector_Urinario" class="input-cantidad" min="0" value="0"></td></tr>
-          <tr><td>Bolsa colectora</td><td>2 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Bolsa_Colectora" class="input-cantidad" min="0" value="0"></td></tr>
-          <tr><td>Pinzas Kocher</td><td>2 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Pinzas_Kocher" class="input-cantidad" min="0" value="0"></td></tr>
+          <tr><td>Maniquí sondaje MASCULINO</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Maniqui_Masculino" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Maniquí sondaje FEMENINO</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Maniqui_Femenino" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Palo gotero</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Palo_Gotero" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Lubricante</td><td>1 bote por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Lubricante_Bote" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Jeringa 10 ml</td><td>1 cada 2 estudiantes</td><td class="col-solicitada"><input type="number" name="Cant_Jeringa_10ml" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Sonda rectal</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Sonda_Rectal" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Sonda vesical de 3 vías</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Sonda_Vesical_3vias" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Sonda vesical pico-pato</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Sonda_Pico_Pato" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Sonda Foley 14Fr</td><td>4 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Sonda_Foley_14Fr" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Colector urinario</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Colector_Urinario" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Bolsa colectora</td><td>2 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Bolsa_Colectora" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Pinzas Kocher</td><td>2 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Pinzas_Kocher" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          
+          <!-- FILAS EXTRAS PARA MATERIALES NO LISTADOS -->
+          <tr><td><input type="text" name="Extra_Compartido_Nombre_1" class="input-extra-nombre" placeholder="Añadir otro material compartido..."></td><td>Manual</td><td class="col-solicitada"><input type="number" name="Extra_Compartido_Cant_1" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td><input type="text" name="Extra_Compartido_Nombre_2" class="input-extra-nombre" placeholder="Añadir otro material compartido..."></td><td>Manual</td><td class="col-solicitada"><input type="number" name="Extra_Compartido_Cant_2" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td><input type="text" name="Extra_Compartido_Nombre_3" class="input-extra-nombre" placeholder="Añadir otro material compartido..."></td><td>Manual</td><td class="col-solicitada"><input type="number" name="Extra_Compartido_Cant_3" class="input-cantidad" min="0" placeholder="0"></td></tr>
         </tbody>
       </table>
     </div>
 
-    <!-- Fila inferior con el botón de Volver y el nuevo botón verde de Enviar -->
+    <!-- SECCIÓN NUEVA: COMENTARIOS Y OBSERVACIONES -->
+    <div class="section">
+      <h2>Comentarios y Organización del Taller</h2>
+      <div class="comentarios-box">
+        <label style="color: #555; font-size: 0.95em;" for="comentarios">Indique aquí cualquier especificación adicional sobre la distribución de las mesas, necesidades del aula o variaciones en los materiales:</label>
+        <textarea id="comentarios" name="Observaciones_Organizacion" placeholder="Ej: Necesitamos dos mesas adicionales para las estaciones de maniquíes masculinos..."></textarea>
+      </div>
+    </div>
+
+    <!-- Fila inferior de acciones -->
     <div class="actions-row">
       <a href="index.html" class="btn-volver">← Volver al Panel Principal</a>
       <button type="submit" class="btn-enviar">Enviar Solicitud al LHACyS</button>
