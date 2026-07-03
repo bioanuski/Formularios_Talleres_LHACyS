@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LHACyS - Solicitud de Material: ABSU</title>
+<title>LHACyS - Solicitud de Material: PT I: Extracciones</title>
 
 <style>
 body {
@@ -244,7 +244,7 @@ tr:hover {
 <form action="https://formspree.io/f/TU_CODIGO_AQUI" method="POST">
 
   <div class="header-banner">
-    <h1>LHACyS - Solicitud de Material: ABSU</h1>
+    <h1>LHACyS - Solicitud de Material: PT I: Extracciones</h1>
   </div>
 
   <div class="container">
@@ -263,7 +263,7 @@ tr:hover {
       </div>
     </div>
 
-    <input type="hidden" name="_subject" value="Nueva Solicitud de Material: ABSU">
+    <input type="hidden" name="_subject" value="Nueva Solicitud de Material: PT I - Extracciones">
 
     <!-- SECCIÓN 1: MATERIAL POR ESTUDIANTE -->
     <div class="section">
@@ -277,7 +277,11 @@ tr:hover {
           </tr>
         </thead>
         <tbody>
-          <!-- Vacío originalmente en el checklist, listo para filas extra -->
+          <tr><td>Guantes no estériles</td><td>2 por estudiante</td><td class="col-solicitada"><input type="number" name="Cant_Guantes_No_Esteriles" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Palomilla 19G</td><td>1 por estudiante</td><td class="col-solicitada"><input type="number" name="Cant_Palomilla_19G" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Palomilla 21G</td><td>1 por estudiante</td><td class="col-solicitada"><input type="number" name="Cant_Palomilla_21G" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Campana de extracción</td><td>1 por estudiante</td><td class="col-solicitada"><input type="number" name="Cant_Campana_Extraccion" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Tubo analítica</td><td>1 por estudiante</td><td class="col-solicitada"><input type="number" name="Cant_Tubo_Analitica" class="input-cantidad" min="0" placeholder="0"></td></tr>
         </tbody>
       </table>
       <!-- Botón dinámico estudiante -->
@@ -296,17 +300,14 @@ tr:hover {
           </tr>
         </thead>
         <tbody>
-          <tr><td>DESA</td><td>2 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_DESA" class="input-cantidad" min="0" placeholder="0"></td></tr>
-          <tr><td>Maniquí de intubación/ventilación</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Maniqui_Intubacion" class="input-cantidad" min="0" placeholder="0"></td></tr>
-          <tr><td>Maniquí RCP</td><td>3</td><td class="col-solicitada"><input type="number" name="Cant_Maniqui_RCP" class="input-cantidad" min="0" placeholder="0"></td></tr>
-          <tr><td>Ambú</td><td>2 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Ambu" class="input-cantidad" min="0" placeholder="0"></td></tr>
-          <tr><td>Laringoscopio</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Laringoscopio" class="input-cantidad" min="0" placeholder="0"></td></tr>
-          <tr><td>Laringoscopio óptico Airtraq</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Laringoscopio_Airtraq" class="input-cantidad" min="0" placeholder="0"></td></tr>
-          <tr><td>Máscara laríngea adulto</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Mascara_Laringea" class="input-cantidad" min="0" placeholder="0"></td></tr>
-          <tr><td>Cánulas de Guedel</td><td>3 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Canulas_Guedel" class="input-cantidad" min="0" placeholder="0"></td></tr>
-          <tr><td>Tubo orotraqueal</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Tubo_Orotraqueal" class="input-cantidad" min="0" placeholder="0"></td></tr>
-          <tr><td>Tubo flexometálico</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Tubo_Flexometalico" class="input-cantidad" min="0" placeholder="0"></td></tr>
-          <tr><td>Mascarilla facial</td><td>2 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Mascarilla_Facial" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Brazos</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Brazos" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Empapadores</td><td>Los necesarios</td><td class="col-solicitada"><input type="number" name="Cant_Empapadores" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Contenedor punzantes</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Contenedor_Punzantes" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Compresor</td><td>2 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Compresor" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Gasas</td><td>2 paquetes por estudiante</td><td class="col-solicitada"><input type="number" name="Cant_Gasas_Paquetes" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Antiséptico</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Antiseptico" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Jeringa 10 ml</td><td>1 cada 2 estudiantes</td><td class="col-solicitada"><input type="number" name="Cant_Jeringa_10ml" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Bote hemocultivo</td><td>Los que haya</td><td class="col-solicitada"><input type="number" name="Cant_Bote_Hemocultivo" class="input-cantidad" min="0" placeholder="0"></td></tr>
         </tbody>
       </table>
       <!-- Botón dinámico compartido -->
@@ -318,7 +319,7 @@ tr:hover {
       <h2>Comentarios y Organización del Taller</h2>
       <div class="comentarios-box">
         <label style="color: #555; font-size: 0.95em;" for="comentarios">Indique aquí cualquier especificación adicional sobre la distribución de las mesas, necesidades del aula o variaciones en los materiales:</label>
-        <textarea id="comentarios" name="Observaciones_Organizacion" placeholder="Ej: Necesitamos espacio amplio para tumbar las colchonetas de RCP..."></textarea>
+        <textarea id="comentarios" name="Observaciones_Organizacion" placeholder="Ej: Necesitamos contenedores adicionales de punzantes cerca de las estaciones de simulación..."></textarea>
       </div>
     </div>
 

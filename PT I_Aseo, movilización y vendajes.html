@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LHACyS - Solicitud de Material: ABSU</title>
+<title>LHACyS - Solicitud de Material: PT I: Aseo, movilización y vendajes</title>
 
 <style>
 body {
@@ -244,7 +244,7 @@ tr:hover {
 <form action="https://formspree.io/f/TU_CODIGO_AQUI" method="POST">
 
   <div class="header-banner">
-    <h1>LHACyS - Solicitud de Material: ABSU</h1>
+    <h1>LHACyS - Solicitud de Material: PT I: Aseo, movilización y vendajes</h1>
   </div>
 
   <div class="container">
@@ -263,7 +263,7 @@ tr:hover {
       </div>
     </div>
 
-    <input type="hidden" name="_subject" value="Nueva Solicitud de Material: ABSU">
+    <input type="hidden" name="_subject" value="Nueva Solicitud de Material: PT I - Aseo, movilización y vendajes">
 
     <!-- SECCIÓN 1: MATERIAL POR ESTUDIANTE -->
     <div class="section">
@@ -277,7 +277,13 @@ tr:hover {
           </tr>
         </thead>
         <tbody>
-          <!-- Vacío originalmente en el checklist, listo para filas extra -->
+          <tr><td>Guantes no estériles</td><td>1 par por estudiante</td><td class="col-solicitada"><input type="number" name="Cant_Guantes_No_Esteriles" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Gasas</td><td>1 por estudiante</td><td class="col-solicitada"><input type="number" name="Cant_Gasas" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Jeringuilla 2ml</td><td>1 por estudiante</td><td class="col-solicitada"><input type="number" name="Cant_Jeringuilla_2ml" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Jeringuilla 5ml</td><td>1 por estudiante</td><td class="col-solicitada"><input type="number" name="Cant_Jeringuilla_5ml" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Suero 30ml</td><td>1 por estudiante</td><td class="col-solicitada"><input type="number" name="Cant_Suero_30ml" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Venda elástica 10x10</td><td>1 por cada 2 estudiantes</td><td class="col-solicitada"><input type="number" name="Cant_Venda_Elastica_10x10" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Venda elástica 7x4</td><td>1 por cada 2 estudiantes</td><td class="col-solicitada"><input type="number" name="Cant_Venda_Elastica_7x4" class="input-cantidad" min="0" placeholder="0"></td></tr>
         </tbody>
       </table>
       <!-- Botón dinámico estudiante -->
@@ -296,17 +302,37 @@ tr:hover {
           </tr>
         </thead>
         <tbody>
-          <tr><td>DESA</td><td>2 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_DESA" class="input-cantidad" min="0" placeholder="0"></td></tr>
-          <tr><td>Maniquí de intubación/ventilación</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Maniqui_Intubacion" class="input-cantidad" min="0" placeholder="0"></td></tr>
-          <tr><td>Maniquí RCP</td><td>3</td><td class="col-solicitada"><input type="number" name="Cant_Maniqui_RCP" class="input-cantidad" min="0" placeholder="0"></td></tr>
-          <tr><td>Ambú</td><td>2 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Ambu" class="input-cantidad" min="0" placeholder="0"></td></tr>
-          <tr><td>Laringoscopio</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Laringoscopio" class="input-cantidad" min="0" placeholder="0"></td></tr>
-          <tr><td>Laringoscopio óptico Airtraq</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Laringoscopio_Airtraq" class="input-cantidad" min="0" placeholder="0"></td></tr>
-          <tr><td>Máscara laríngea adulto</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Mascara_Laringea" class="input-cantidad" min="0" placeholder="0"></td></tr>
-          <tr><td>Cánulas de Guedel</td><td>3 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Canulas_Guedel" class="input-cantidad" min="0" placeholder="0"></td></tr>
-          <tr><td>Tubo orotraqueal</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Tubo_Orotraqueal" class="input-cantidad" min="0" placeholder="0"></td></tr>
-          <tr><td>Tubo flexometálico</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Tubo_Flexometalico" class="input-cantidad" min="0" placeholder="0"></td></tr>
-          <tr><td>Mascarilla facial</td><td>2 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Mascarilla_Facial" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Muestrario de vendas</td><td>1</td><td class="col-solicitada"><input type="number" name="Cant_Muestrario_Vendas" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Cama de hospital</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Cama_Hospital" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Sábana bajera</td><td>2 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Sabana_Bajera" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Sábana encimera</td><td>2 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Sabana_Encimera" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Sábana entremetida</td><td>2 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Sabana_Entremetida" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Funda almohada</td><td>2 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Funda_Almohada" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Colcha</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Colcha" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Camisón</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Camison" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Toalla pequeña</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Toalla_Pequena" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Toalla grande</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Toalla_Grande" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Almohada de cambio postural</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Almohada_Cambio_Postural" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Bolsa de residuos</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Bolsa_Residuos" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Cuña masculine y femenina</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Cuna_Masc_Fem" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Gancho cama</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Gancho_Cama" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Nebulizador</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Nebulizador" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Batea</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Batea" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Palanganas</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Palanganas" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Bolsa de aseo</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Bolsa_Aseo" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Caja bucal</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Caja_Bucal" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Enjuague bucal</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Enjuague_Bucal" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Depresor bucal</td><td>2 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Depresor_Bucal" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Empapador</td><td>2 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Empapador" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Pañales</td><td>2 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Panales" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Esparadrapo</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Esparadrapo" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Férulas</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Ferulas" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Jeringuilla 50ml</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Jeringuilla_50ml" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Spray úlceras</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Spray_Ulceras" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Taloneras</td><td>2 pares por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Taloneras_Pares" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Gafas nasales</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Gafas_Nasales" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Suero 100ml</td><td>2 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Suero_100ml" class="input-cantidad" min="0" placeholder="0"></td></tr>
+          <tr><td>Fonendoscopio</td><td>1 por grupo</td><td class="col-solicitada"><input type="number" name="Cant_Fonendoscopio" class="input-cantidad" min="0" placeholder="0"></td></tr>
         </tbody>
       </table>
       <!-- Botón dinámico compartido -->
@@ -318,7 +344,7 @@ tr:hover {
       <h2>Comentarios y Organización del Taller</h2>
       <div class="comentarios-box">
         <label style="color: #555; font-size: 0.95em;" for="comentarios">Indique aquí cualquier especificación adicional sobre la distribución de las mesas, necesidades del aula o variaciones en los materiales:</label>
-        <textarea id="comentarios" name="Observaciones_Organizacion" placeholder="Ej: Necesitamos espacio amplio para tumbar las colchonetas de RCP..."></textarea>
+        <textarea id="comentarios" name="Observaciones_Organizacion" placeholder="Ej: Talleres estructurados habitualmente en 12 grupos de mañana y 8 de tarde. Se requiere espacio adecuado para maniobrar alrededor de las camas de hospital..."></textarea>
       </div>
     </div>
 
