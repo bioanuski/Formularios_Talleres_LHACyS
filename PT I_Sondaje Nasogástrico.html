@@ -371,5 +371,40 @@ tr:hover {
   }
 </script>
 
+<!-- Bloque de botones fijos (integrado directamente en el archivo) -->
+<div class="contenedor-botones-fijos">
+    <button type="button" class="btn-accion btn-enviar-print" onclick="window.print()">Imprimir PDF y Guardar Taller</button>
+    <button type="button" class="btn-accion btn-cancelar" onclick="window.close()">Cerrar Pestaña</button>
+</div>
+
+<style>
+    .contenedor-botones-fijos {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 40px;
+        padding: 20px;
+        background-color: #f5f7fa;
+        border-top: 1px solid #dcdfe6;
+    }
+    .btn-accion {
+        padding: 12px 24px;
+        font-size: 1em;
+        font-weight: bold;
+        border-radius: 6px;
+        cursor: pointer;
+        border: none;
+        transition: background 0.2s;
+    }
+    .btn-enviar-print { background-color: #28a745; color: white; }
+    .btn-enviar-print:hover { background-color: #218838; }
+    .btn-cancelar { background-color: #dc3545; color: white; }
+    .btn-cancelar:hover { background-color: #c82333; }
+
+    @media print {
+        .contenedor-botones-fijos { display: none !important; }
+    }
+</style>
+
 </body>
 </html>
