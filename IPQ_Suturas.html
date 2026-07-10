@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LHACyS - Solicitud de Material: IPQ: Suturas</title>
+<title>LHACyS - Solicitud de Material: IPQ_Suturas</title>
 
 <style>
 body {
@@ -241,7 +241,7 @@ tr:hover {
 <body>
 
   <div class="header-banner">
-    <h1>LHACyS - Solicitud de Material: IPQ: Suturas</h1>
+    <h1>LHACyS - Solicitud de Material: IPQ_Suturas</h1>
   </div>
 
   <div class="container">
@@ -260,7 +260,7 @@ tr:hover {
       </div>
     </div>
 
-    <input type="hidden" name="_subject" value="Nueva Solicitud de Material: IPQ - Suturas">
+    <input type="hidden" name="_subject" value="Nueva Solicitud de Material: IPQ_Suturas">
 
     <!-- SECCIÓN 1: MATERIAL POR ESTUDIANTE -->
     <div class="section">
@@ -355,11 +355,45 @@ tr:hover {
     // Incrementar el contador para el próximo clic
     contadores[idTabla]++;
   }
+
+
+  function imprimirConNombreDinamico() {
+    // 1. Obtener el nombre del solicitante
+    let solicitante = document.getElementById('nombre').value.trim();
+    if (solicitante === "") {
+        solicitante = "Sin_Nombre";
+    }
+
+    // 2. Extraer el nombre del taller del título (h1)
+    let h1Texto = document.querySelector('.header-banner h1').innerText;
+    let nombreTaller = h1Texto.includes(':') ? h1Texto.split(':')[1].trim() : "Taller";
+
+    // 3. Obtener y formatear la fecha actual (AAMMDD)
+    let fechaActual = new Date();
+    let anio = String(fechaActual.getFullYear()).slice(-2); // Toma los últimos 2 dígitos del año
+    let mes = String(fechaActual.getMonth() + 1).padStart(2, '0'); // Los meses van de 0 a 11, se suma 1
+    let dia = String(fechaActual.getDate()).padStart(2, '0');
+    let fechaFormateada = anio + mes + dia;
+
+    // 4. Guardar el título original de la pestaña
+    const tituloOriginal = document.title;
+
+    // 5. Cambiar el título al formato exacto solicitado incluyendo la fecha
+    document.title = "Solicitud de material" + "_" + nombreTaller + "_" + fechaFormateada + "_" + solicitante;
+
+    // 6. Lanzar el diálogo de impresión
+    window.print();
+
+    // 7. Restaurar el título original para la visualización web
+    setTimeout(() => {
+        document.title = tituloOriginal;
+    }, 1000);
+  }
 </script>
 
-<!-- Bloque de botones fijos (integrado directamente en el archivo) -->
+<!-- Bloque de botones fijos -->
 <div class="contenedor-botones-fijos">
-    <button type="button" class="btn-accion btn-enviar-print" onclick="window.print()">Imprimir PDF y Guardar Taller</button>
+    <button type="button" class="btn-accion btn-enviar-print" onclick="imprimirConNombreDinamico()">Imprimir PDF y Guardar Taller</button>
     <button type="button" class="btn-accion btn-cancelar" onclick="window.close()">Cerrar Pestaña</button>
 </div>
 
